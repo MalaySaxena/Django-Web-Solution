@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>first app</title>
+    <link rel="stylesheet" href="{% static "css/myfile.css" %}"/>
+</head>
+<body>
+  <h1>hello index.html</h1>
+  <h2>Here are the records</h2>
+
+  <div class="django">
+      {% if ins %}
+      <table>
+          <thead>Name</thead>
+          <thead>Date</thead>
+          {% for a in ins %}
+          <tr>
+              <td>{{ a.name }}</td>
+              <td>{{ a.date }}</td>
+          </tr>
+          {% endfor %}
+      </table>
+      {% else %}
+      <p>not data</p>
+      {% endif %}
+  </div>
+</body>
+</html>
